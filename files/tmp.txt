@@ -1,0 +1,20 @@
+function a(b){console.log(b)}
+function b(){return 'its b'}
+a(b)
+
+
+let c = function(){console.log(b)}
+let d = function(){return 'its d'}
+c(d)
+
+
+
+a = [1,2,3]
+a.entries()
+
+b = {one:1, two:2}
+Object.keys(b)
+Object.valuse(b)
+Object.entries(b)
+
+// sets and maps

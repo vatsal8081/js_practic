@@ -1,0 +1,7 @@
+// nullish colision oprator (??) will return false only value is null or undefine it return true for 0 , '' etc
+
+
+// short cerciting is use in && and || oprator and it will not only work in boolean also work for other object types
+// short circiting means when short circite condation become true it's immideatly return with current value
+// && will short circit immideatly it find false and if not find false then return last one
+// || will short circit immideatly it find true and if not find true then return last one 
