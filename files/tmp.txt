@@ -18,3 +18,9 @@ Object.valuse(b)
 Object.entries(b)
 
 // sets and maps
+
+// first class function and higher order function
+
+// call , apply and bind methods in js for functions
+// immideate invoke function expression
+// closures in js 
