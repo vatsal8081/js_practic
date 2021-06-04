@@ -9,3 +9,5 @@ cource inik : https://www.udemy.com/course/the-complete-javascript-course/
 9 - 103, 104, 105, 106, 107, 108, 111, 112, 115, 118, string methods
 
 10 - 128, 129, 130
+
+11 - 140, 141
