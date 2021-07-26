@@ -24,3 +24,17 @@ Object.entries(b)
 // call , apply and bind methods in js for functions
 // immideate invoke function expression
 // closures in js 
+
+
+
+// for throwaway paramiters we use _ in js
+// now what is throwaway params? as you know in js there is no concept of named params so we have to pass params in sequese but some time we are intrested in just spacific params but to pass it we have to pass in line
+
+ex [1,2,3].forEach((el, _ , arr)=>{
+
+})
+
+like above we are intrusted in el and actual array params but for pass array we need to pass index param as well even if we don't want it because it works in same sequence so we can use _ for that to tell other devs that middle param is not require but we pass it for pass other params
+
+
+want to modify actual array then forEach otherwise map

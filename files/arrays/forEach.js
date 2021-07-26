@@ -42,3 +42,4 @@ for(let el of arr){
 
     console.log(el);
 }
+
