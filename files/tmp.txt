@@ -38,3 +38,13 @@ like above we are intrusted in el and actual array params but for pass array we 
 
 
 want to modify actual array then forEach otherwise map
+
+
+
+
+- when we call function from object then this keyword will point to object calling functions
+- when we call function direct like in functional programing then this keyword will point
+  if strict mode then to undefine and if not strict mode then global browser object (Window) 
+- when we use arrow function then arrow function don't have there own this keyword so in arrow 
+function this will point to it's parent scope.
+- when function call as event listener then this will point to dom element on witch function is called

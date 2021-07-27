@@ -2,10 +2,10 @@
 // optional chaning will first check if lefthand side property is exist or not if yes then go forwared (right hand side) otherwise return undefine 
 // optional chaning not have any bussiness with content of the property it just ensure it exist or not 
 
-let obj  = {
+let obj = {
     name: 'abc',
-    size: {hight:255, weight: 120},
-    func(){
+    size: { hight: 255, weight: 120 },
+    func() {
         console.log('func call');
     }
 }
@@ -34,11 +34,11 @@ console.log(obj?.size?.[key]);
 obj?.func?.()
 
 // also use in function params
-function abc(one, two){
+function abc(one, two) {
     console.log(two?.abc);
 }
 
-function abc(one, two){
+function abc(one, two) {
     console.log(two?.());
 }
 
@@ -47,7 +47,7 @@ function abc(one, two){
 let abc = xyz?.one
 
 // can use in arr
-let a = [1,2,3,4]
+let a = [1, 2, 3, 4]
 console.log(a?.[3]);
 
 console.log(a?.[5]);
@@ -57,10 +57,10 @@ console.log(a?.[5]);
 // combining other oprators
 
 
-let obj  = {
+let obj = {
     name: 'abc',
-    size: {hight:255, weight: 120},
-    func(){
+    size: { hight: 255, weight: 120 },
+    func() {
         console.log('func call');
     }
 }
@@ -80,8 +80,8 @@ console.log(obj?.size?.[key] ? obj?.size?.[key] : "NA");
 console.log(obj?.func ? obj?.func() : "NA");
 
 
-console.log(obj?.name ?? obj?.name);
-console.log(obj?.xyz ?? obj?.xyz);
+console.log(obj?.name ?? "NA");
+console.log(obj?.xyz ?? "NA");
 
 
 

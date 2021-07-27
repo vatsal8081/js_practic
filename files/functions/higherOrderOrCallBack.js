@@ -4,16 +4,16 @@
 // it allows us to do diffrent things in one function
 
 
-function addPaddingEnd(str){
+function addPaddingEnd(str) {
     return str.padEnd(40, "+")
 }
 
-function addMr(str){
+function addMr(str) {
     return `Mr. ${str}`
 }
 
 
-function transform(str, fn){
+function transform(str, fn) {
     console.log('str is', fn(str));
 }
 
@@ -26,12 +26,12 @@ transform('hello', addMr)
 
 // this method is seen in many built in js methods
 
-['a', 'b', 'c'].forEach((el)=>{
+['a', 'b', 'c'].forEach((el) => {
     console.log(el);
 });
 
 
-setTimeout(()=>{
+setTimeout(() => {
     console.log('ok');
-},1000);
+}, 1000);
 
