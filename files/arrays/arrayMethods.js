@@ -3,8 +3,8 @@
 // the file contains only most common used array methods you can check for all methods in mdn
 
 
-// concat method is use to concate 2 arrays and return new array it not affect to actual arr
-// also there is ... spread opraor that we can use instade of it
+// concat method is use to concat 2 arrays and return new array it not affect to actual arr
+// also there is ... spread operator that we can use instated of it
 
 let arr1 = [1, 2, 3]
 let arr2 = [4, 5, 6]
@@ -24,12 +24,12 @@ console.log(arr3);
 
 
 
-// entries method return new array which have sub arrays every sub arrays first indexd will be index of that element and seccond will be value it self
+// entries method return new array which have sub arrays every sub arrays first index will be index of that element and second will be value it self
 
 let arr = ['a', 'b', 'c']
 console.log(arr.entries());
 
-// note that entries is itrator so you can't see actual data by consoling like above it will be type of itrator only you can do like this
+// note that entries is iterator so you can't see actual data by consoling like above it will be type of iterator only you can do like this
 console.log([...arr.entries()]);
 
 // or the best use of it is in loops
@@ -40,7 +40,7 @@ for (let [i, dt] of arr.entries()) {
 
 
 // flat method is use to get every sub element from array and create  new array with just single element in every index, it require 1 optional pearmiter as deep which define how deep you want to go for flatting
-// the alternative of flat is requce and concat method which we will learn in advance arr section
+// the alternative of flat is reduce and concat method which we will learn in advance arr section
 
 let arr2 = [0, 1, 2, [[[3, 4]]]];
 console.log(arr2.flat(2));
@@ -51,7 +51,7 @@ let arr2 = [0, [1], [[2]], [[[3, 4]]]];
 console.log(arr2.flat(3));
 
 
-// includes method is use to check if any perticular value is in arr or not it require 2 paramiter what to check and index to start check (optional)
+// includes method is use to check if any particular value is in arr or not it require 2 parameter what to check and index to start check (optional)
 
 [1, 2, 3].includes(2)
 
@@ -66,9 +66,9 @@ console.log(arr2.flat(3));
 [1, 2, 3].includes(2, -1)
 
 
-// index of is a function which use to find index of perticular element
-// it give only vary first auccerance of element of array
-// it accept 2 paramiters what to find and start index (optional)
+// index of is a function which use to find index of particular element
+// it give only vary first auccorance of element of array
+// it accept 2 parameters what to find and start index (optional)
 // it return -1 if index not found or if starting index in arrays is grater then length of array
 
 [1, 2, 3].indexOf(2)
@@ -89,7 +89,7 @@ console.log(arr2.flat(3));
 
 
 
-// join method use to join array with spacific saprator and return string
+// join method use to join array with specific separator and return string
 
 [1, 2, 3].join()
 [1, 2, 3].join('-')
@@ -120,7 +120,7 @@ let last = a.pop()
 
 
 
-// slice method is use to slice from array it returns shallow copy of array and not change in actual array requires 2 arguments start (default 0) end (drfault arr.length -1)
+// slice method is use to slice from array it returns shallow copy of array and not change in actual array requires 2 arguments start (default 0) end (default arr.length -1)
 // in end index it will stop before one index of given end number
 
 [1, 2, 3].slice(1)
@@ -132,7 +132,7 @@ let last = a.pop()
 [1, 2, 3].slice(-8, -2)
 
 
-// splice method is use to take some parts from array it mutate actual array and it require 3 paramiters start , how much index from start, if any other replacment thers
+// splice method is use to take some parts from array it mutate actual array and it require 3 parameters start , how much index from start, if any other replacement 
 
 ['a', 'b', 'c', 'd', 'e'].splice(0, 3)
 ['a', 'b', 'c', 'd', 'e'].splice(1, 3)

@@ -6,7 +6,7 @@ let foo = () => [1, 2]
 let [a] = foo();
 console.log(a);
 
-// ommit some valeus
+// emit some vales
 const tmp = [1, 2, 3]
 let [a, , b] = tmp
 console.log(a, b);
@@ -46,7 +46,7 @@ console.log("a = ", a, "b = ", b, "c = ", c);
 let { abc } = { abc: 1 }
 console.log(abc);
 
-// give diffrent name to var then key
+// give different name to var then key
 let { abc: a } = { abc: 1 }
 console.log(a);
 
@@ -65,7 +65,7 @@ console.log(a, b);
 let { one, two, four = 4 } = { one: 1, two: 2, three: 3 }
 console.log(one, two, four);
 
-// default values with diffrent key
+// default values with different key
 let { one: a, two: b, four: c = 4 } = { one: 1, two: 2, three: 3 }
 console.log(a, b, c);
 
@@ -114,9 +114,9 @@ console.log(ans);
 
 // hear we are creating key name as variable's value (in this case one) then 
 // trying to distruct one from obj so we don't know the key name but it's
-// in the var so we use [] to use variable's value as distructing
+// in the var so we use [] to use variable's value as distrusting
 // but js will consider [] as array distruct so to tell it's a computed property
-// in this type of case we have to compulsary use : and new var name   
+// in this type of case we have to compulsory use : and new var name   
 
 
 

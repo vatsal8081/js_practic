@@ -1,7 +1,7 @@
-// a higher oeder function is a type of function which take another function
-// as paramiter and execute it 
+// a higher order function is a type of function which take another function
+// as parameter and execute it 
 // this type of thing is vary common in js and can be seen many places
-// it allows us to do diffrent things in one function
+// it allows us to do different things in one function
 
 
 function addPaddingEnd(str) {

@@ -54,7 +54,7 @@ console.log(a?.[5]);
 
 
 
-// combining other oprators
+// combining other operators
 
 
 let obj = {

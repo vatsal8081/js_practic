@@ -6,7 +6,7 @@ let person = {
 }
 
 
-function change(name, obj){
+function change(name, obj) {
     name = 'xyz'
     obj.name = 'lisa'
 }
@@ -20,6 +20,6 @@ console.log(tmp, person);
 
 // did you see the tmp stay same after changing name in function but person.name change after changing obj.name
 
-// this behiovure happens because objects are refrence type so when we pass
-// obj even as function paramiter it not pass diffrent obj it only pass refrence
-// of main object so when we change in any of one it will affect to both fuction //// paramiter object and main object as well but it will not the case for string, ////  number and other premitive types
+// this behiovure happens because objects are reference type so when we pass
+// obj even as function parameter it not pass different obj it only pass reference
+// of main object so when we change in any of one it will affect to both function //// parameter object and main object as well but it will not the case for string, ////  number and other primitive types
