@@ -11,3 +11,5 @@ course link : https://www.udemy.com/course/the-complete-javascript-course/
 10 - 128, 129, 130
 
 11 - 140, 141, 161, 162, simple and advance arr methods
+
+16 - 241, 244, 245, 246, 247, 248, 249
