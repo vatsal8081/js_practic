@@ -88,7 +88,6 @@ fetchData('https://restcountries.eu/rest/v2/name/india')
 
 let resolvePromise = Promise.resolve(`it's resolve immediately`)
 
-
 let rejectPromise = Promise.reject(`it's rejected immediately`)
 
 resolvePromise.then((res) => console.log(res))
