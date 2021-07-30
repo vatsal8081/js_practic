@@ -36,7 +36,7 @@ wait(1)
 
 
 let resData = {}
-let fetchData = (url) => {
+const fetchData = (url) => {
     return new Promise((resolve, reject) => {
         fetch(url)
             .then((res) => {
@@ -79,3 +79,17 @@ fetchData('https://restcountries.eu/rest/v2/name/india')
 // because fetch give 404 and all other err response in then 
 // and we also converting data to json from readableStreem
 // so like this we can also promisify promise to do some common task on every promise response
+
+
+
+
+
+// there are also 2 methods in promise to immediately resolve or reject promise right away
+
+let resolvePromise = Promise.resolve(`it's resolve immediately`)
+
+
+let rejectPromise = Promise.reject(`it's rejected immediately`)
+
+resolvePromise.then((res) => console.log(res))
+rejectPromise.catch((err) => console.log(err))
