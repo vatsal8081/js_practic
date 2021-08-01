@@ -49,3 +49,129 @@ console.log(getNaibourByCountry('india'));
 // and if we return  return nepalData = await nepalData.json() then we are returning promise 
 // because as we know every await return promise so to get data in clg we also use await because at the end function returning promise only 
 // and if we do return nepalData then we are telling js to wait for get data of nepal assign to variable then return it
+
+
+
+// hendlong errors 
+try{
+   let myCountry = await fetch('https://restcountries.eu/rest/v2/name/india')
+   myCountry = await myCountry.json()
+   console.log('my country', myCountry);
+}
+catch(err){
+    console.log('err', err.message);
+}
+finally{
+    console.log('always call');
+}
+// like this with tredisnal try catch we can catch all possible errs in asynchronous calls and we can use finally like this to call wather try or catch execute
+
+
+
+try{
+    let myCountry = await fetch('https://restcountries.eu/rest/v2/name/india')
+    let [, { borders: [, , , , , nepalCode] }] = await myCountry.json()
+    let nepalData = await fetch(`https://restcountries.eu/rest/v2/alpha/${nepalCode}`)
+    console.log(nepalData);
+    await Promise.reject('manuly rejected promise')
+}
+catch(err){
+    console.log('hear',err);
+}
+// and we can catch any error that comes from any async call in catch block
+// we can also manuly reject promise like this
+
+
+
+// using async await practis
+
+
+const lottery = () => {
+    return new Promise((resolve, reject) => {
+        const random = Math.random();
+        console.log(random);
+        random > 0.5
+            ? resolve({ msg: 'you win.', random })
+            : reject({ msg: 'you louse', random })
+    })
+}
+
+
+try{
+    const lotteryOne = await lottery()
+    console.log('lottery one', lotteryOne.msg);
+    const lotteryTwo = await lottery()
+    console.log('lottery two', lotteryTwo.msg)
+}
+catch(err){
+    console.log(err.msg);
+}
+
+const drawLotterys = async () => {
+    try{
+        const lotteryOne = await lottery()
+        console.log('lottery one', lotteryOne.msg);
+        const lotteryTwo = await lottery()
+        console.log('lottery two', lotteryTwo.msg)
+    }
+    catch(err){
+        console.log(err.msg);
+    }    
+}
+
+const onWinCallApi = async () => {
+    try{
+        const lottryResult = await lottery()
+        console.log('lottery resuly', lottryResult);
+        const apiResult = await fetch('asdfdfdfafdf')
+        console.log('api resuly', apiResult);
+    }
+    catch(err){
+        console.log('some err : ', err);
+    }
+}
+
+
+// promisifing fetch like axios
+const fetchData = (url) => {
+    // let tmpResponseHolder = {}
+    return new Promise( async (resolve, reject) => {
+
+        try{
+            let response = await fetch(url)
+            // tmpResponseHolder = response
+            responseData = await response.json()
+            if(response.status < 399){
+                resolve({
+                    status: response.status,
+                    url: response.url,
+                    ok: response.ok,
+                    data: responseData
+                })
+            }
+            else{
+                reject({
+                    status: response.status,
+                    url: response.url,
+                    ok: response.ok,
+                    data: responseData
+                })
+            }
+        }
+        catch(err) {
+            reject(err)
+        }
+
+    })
+
+}
+
+
+try{
+    let res = await fetchData('https://restcountries.eu/rest/v2/name/india')
+    console.log('res', res);
+
+}
+catch(err){
+    console.log('err : ', err);
+}

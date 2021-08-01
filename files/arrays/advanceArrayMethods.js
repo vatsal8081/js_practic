@@ -260,4 +260,3 @@ str.toUpperCase().split(" ").map((el, i) => el + i)
 
 str.toUpperCase().split(" ").map((el, i) => el + i)
     .filter((el) => el.charAt(el.length - 1) !== '0').join(' ')
-
