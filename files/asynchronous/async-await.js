@@ -4,6 +4,7 @@
 
 // async await just return promise 
 // just keep in mind then = await
+// and there is one rule in async await is an async function always return promise
 // where where we need to use then to wait until asynchronous task complete we can use await instead
 // what happens behind the seen is where js engine sees await it wait to get response and then after response continue code
 // we can use await where we get promise to wait for response but keep in mind
@@ -38,52 +39,114 @@ const getNaibourByCountry = async (mainCountryName) => {
     let mainCountry = await fetch(`https://restcountries.eu/rest/v2/name/${mainCountryName}`)
     let [, { borders: [, , , , , nepalCode] }] = await mainCountry.json()
     let nepalData = await fetch(`https://restcountries.eu/rest/v2/alpha/${nepalCode}`)
-    return nepalData = await nepalData.json()
-    // return nepalData
+    return nepalData.json()
 }
 
 console.log(await getNaibourByCountry('india'));
 console.log(getNaibourByCountry('india'));
 // as i told you early that if we use await in function then we should use async in front of function
 // so js know that we can do async tasks in function
-// and if we return  return nepalData = await nepalData.json() then we are returning promise 
-// because as we know every await return promise so to get data in clg we also use await because at the end function returning promise only 
-// and if we do return nepalData then we are telling js to wait for get data of nepal assign to variable then return it
 
 
 
-// hendlong errors 
-try{
-   let myCountry = await fetch('https://restcountries.eu/rest/v2/name/india')
-   myCountry = await myCountry.json()
-   console.log('my country', myCountry);
+// handling errors 
+try {
+    let myCountry = await fetch('https://restcountries.eu/rest/v2/name/india')
+    myCountry = await myCountry.json()
+    console.log('my country', myCountry);
 }
-catch(err){
+catch (err) {
     console.log('err', err.message);
 }
-finally{
+finally {
     console.log('always call');
 }
-// like this with tredisnal try catch we can catch all possible errs in asynchronous calls and we can use finally like this to call wather try or catch execute
+// like this with traditional try catch we can catch all possible errs in asynchronous calls and we can use finally like this to call wather try or catch execute
 
 
 
-try{
+try {
     let myCountry = await fetch('https://restcountries.eu/rest/v2/name/india')
     let [, { borders: [, , , , , nepalCode] }] = await myCountry.json()
     let nepalData = await fetch(`https://restcountries.eu/rest/v2/alpha/${nepalCode}`)
     console.log(nepalData);
-    await Promise.reject('manuly rejected promise')
+    await Promise.reject('manually rejected promise')
 }
-catch(err){
-    console.log('hear',err);
+catch (err) {
+    console.log('hear', err);
 }
 // and we can catch any error that comes from any async call in catch block
-// we can also manuly reject promise like this
+// we can also manually reject promise like this
 
 
 
-// using async await practis
+const getData = async () => {
+    try {
+        let myCountry = await fetch('https://restcountries.eu/rest/v2/name/india')
+        myCountry = await myCountry.json()
+        return `my country is  ${myCountry[1].name}`
+    }
+    catch (err) {
+        console.log('some err auccor', err);
+    }
+}
+
+console.log(getData());
+// as you can see we are getting country data in variable and then returning string
+// but when we do console like this we get promise but don't we await and then return string
+// ues but the thing is there is rule with every async function async function always return promise 
+// and if we return something from async function then that will be fulfilled result of that promise
+// only we return Promise.reject() then only it will we rejected promise and accessible in catch
+// wether you throw string or any thing the final return value will be promise from async function
+// and so we can get that by await and the thing we return from function will be fulfilled value of promise
+console.log(await getData());
+
+// now turn off internet connection and run this
+try {
+    console.log(await getData());
+}
+catch (err) {
+    console.log('err', err);
+}
+// when we do this because there is no internet so fetch will fail and reject promise
+// and then that will be caught in catch block of function and console inside catch of function will print
+// but console in catch block where we call function will not print 
+
+const getData = async () => {
+    try {
+        let myCountry = await fetch('https://restcountries.eu/rest/v2/name/india')
+        myCountry = await myCountry.json()
+        await Promise.reject('rejected promise')
+    }
+    catch (err) {
+        console.log('some err auccor', err);
+    }
+}
+// also when we do this catch of function will execute buy where we call function that catch won't work
+// because the reason behind this is like .catch() method in normal try catch err won't propogate down in all catch blocks
+// we have to manually throw it to other catch block like this 
+
+const getData = async () => {
+    try {
+        let myCountry = await fetch('https://restcountries.eu/rest/v2/name/india')
+        myCountry = await myCountry.json()
+        return `my country is  ${myCountry[1].name}`
+
+        // return Promise.reject('rejected')
+        // if we do this then the promise will be rejected and we will able to catch it 
+        // inside catch block where we call function
+    }
+    catch (err) {
+        console.log('some err auccor', err);
+        throw err;
+    }
+}
+// now after doing this we are rethrowing err from catch to caught it to other catch block 
+// so make just one rule when we car returning something form async function 
+// use try catch and await alwase amd also throw err in catch
+
+
+// using async await practice
 
 
 const lottery = () => {
@@ -97,51 +160,50 @@ const lottery = () => {
 }
 
 
-try{
+try {
     const lotteryOne = await lottery()
     console.log('lottery one', lotteryOne.msg);
     const lotteryTwo = await lottery()
     console.log('lottery two', lotteryTwo.msg)
 }
-catch(err){
+catch (err) {
     console.log(err.msg);
 }
 
 const drawLotterys = async () => {
-    try{
+    try {
         const lotteryOne = await lottery()
         console.log('lottery one', lotteryOne.msg);
         const lotteryTwo = await lottery()
         console.log('lottery two', lotteryTwo.msg)
     }
-    catch(err){
+    catch (err) {
         console.log(err.msg);
-    }    
+    }
 }
 
 const onWinCallApi = async () => {
-    try{
+    try {
         const lottryResult = await lottery()
         console.log('lottery resuly', lottryResult);
         const apiResult = await fetch('asdfdfdfafdf')
         console.log('api resuly', apiResult);
     }
-    catch(err){
+    catch (err) {
         console.log('some err : ', err);
+        throw err;
     }
 }
 
 
-// promisifing fetch like axios
+// promisify fetch like axios
 const fetchData = (url) => {
-    // let tmpResponseHolder = {}
-    return new Promise( async (resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
 
-        try{
+        try {
             let response = await fetch(url)
-            // tmpResponseHolder = response
-            responseData = await response.json()
-            if(response.status < 399){
+            let responseData = await response.json()
+            if (response.status < 399) {
                 resolve({
                     status: response.status,
                     url: response.url,
@@ -149,7 +211,7 @@ const fetchData = (url) => {
                     data: responseData
                 })
             }
-            else{
+            else {
                 reject({
                     status: response.status,
                     url: response.url,
@@ -158,7 +220,7 @@ const fetchData = (url) => {
                 })
             }
         }
-        catch(err) {
+        catch (err) {
             reject(err)
         }
 
@@ -167,11 +229,11 @@ const fetchData = (url) => {
 }
 
 
-try{
+try {
     let res = await fetchData('https://restcountries.eu/rest/v2/name/india')
     console.log('res', res);
 
 }
-catch(err){
+catch (err) {
     console.log('err : ', err);
 }
