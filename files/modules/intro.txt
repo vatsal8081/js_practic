@@ -1,0 +1,18 @@
+- a module is just a reusable peace of code in our project
+- usually a module is standalone file (but that's not same for every time)
+- we can use import and export in a module we can export almost anything from a module
+- and whatever we export from a module is called public API
+- module also have imports and if any of import not work then module will not work
+- from ES6 js has built in module system before that we implement modules with external library like commonJs
+- in ES6 module each file is one module
+- in modules all top level code are scoped to module only so they won't be available in other files like scripts do
+- only way we can use that value in other file is by exporting them 
+- all modules will be execute in strict model by default
+- in module top level this will be undefine and in scripts it's window object
+- in modules we can import and export value but in scripts it's not possible
+- any import and export will only work in top level it won't work inside any if or for or any other block
+- ES6 modules are difference from any other module like commonJs or any other module system in any other language
+- the difference hear is when we import anything from any other module it's reference of export from that module
+- so ex : we are exporting array from one.js and importing in two.js and initial value of array is 
+- [] and after some times it's become [1,2] then evert file that importing it also has new value [1,2]
+- if export value change then import value will also change in all places
