@@ -1,0 +1,24 @@
+1) yarn add <package_name> = install package to project
+    - yarn add <package_name> --dev = install package as dev dependency
+    - yarn add <package_name>@tag or version = instal package by specific version or tag
+
+2) yarn cache clean = to remove all cached files
+
+3) yarn info <package_name> = get info of package
+
+4) yarn init = to create package.json file
+
+5) yarn install = to install all packages needed for project
+
+6) yarn remove <package_name> = to remove package form project
+
+7) yarn run <script_name> = to run script define in package.json file   
+
+8) yarn help = to get help for all commands
+    yarn help <command_name> = get help for specific command
+
+
+9) yarn up = to update specific package
+    - yarn up <package_name> = to update package
+    - yarn up <package_name>@<version> = to update package to specific version 
+    

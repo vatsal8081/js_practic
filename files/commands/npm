@@ -1,0 +1,28 @@
+1) npm help = for get help
+    - npm --help <command> = to get quick help for command
+    - npm help <command> = to get descriptive help for command
+
+2) npm docs <package_name...> = for open package official documentation site if provided
+    - npm docs lodash = open lodash documentation
+    - npm docs lodash vue = open lodash and vue documentation
+
+3) npm init = create or update package.json
+    - npm init -y = to create package.json using default
+
+4) npm install = install package (can change install to 'i' or 'add')
+    - npm i = install all require packages from package.json and also includes dev packages
+    - npm i <package_name> = install specific package
+    - npm i <package_name>@<version> = to install specific version on package 
+    - npm i <package_name>@<tag> = to install specific version or type of package 
+    - npm i <package_name> --save = save package as dependency of your project default is true
+    - npm i <package_name> --save-dev = save package as dev dependency of your project   
+    - npm i <package_name> --g = save package globally in your system also can use (--save-dev to save as dev dependency globally)   
+
+5) npm ls = show all installed packages and there dependencies
+
+6) npm outdated = show all installed packages who are outdated
+
+7) npm uninstall <package_name> = to uninstall any package it will work for both normal and dev dependencies
+
+8) npm update = update all dependencies
+    - npm update <package_name> = update specific package
