@@ -48,3 +48,8 @@ want to modify actual array then forEach otherwise map
 - when we use arrow function then arrow function don't have there own this keyword so in arrow 
 function this will point to it's parent scope.
 - when function call as event listener then this will point to dom element on witch function is called
+
+
+- when there is injex.js file in any folder and we do import abc from forlde_name then js will go to index.js file to find that and import it from that index.js file so we don't need to specify index.js file mame if we want to import any thing from it
+ex: import abc from './lib' 
+this will find abc in lib/index.js file and impoort it
