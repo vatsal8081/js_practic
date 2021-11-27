@@ -33,7 +33,7 @@ paint('black')
 // import carModule, { size, passing, addTyre } from './modules/car.js';
 // if we have default and named exports in our module then we can import both like that
 // all defaults will be in carModule and all named exports will be in {} syntax
-// but in real world we usually never mix default and named exports so a module should only return default of named export
+// but in real world we usually never mix default and named exports so a module should only return default or named export
 
 
 

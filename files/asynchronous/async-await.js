@@ -142,7 +142,7 @@ const getData = async () => {
     }
 }
 // now after doing this we are rethrowing err from catch to caught it to other catch block 
-// so make just one rule when we car returning something form async function 
+// so make just one rule when we are returning something form async function 
 // use try catch and await alwase amd also throw err in catch
 
 
@@ -237,3 +237,30 @@ try {
 catch (err) {
     console.log('err : ', err);
 }
+
+
+// 
+
+const abc = async () => {
+    await fetch('https://jsonplaceholder.typicode.com/todos')
+    await fetch('https://jsonplaceholder.typicode.com/users')
+}
+
+const xyz = () => {
+    fetch('https://jsonplaceholder.typicode.com/todos').then(()=>{})
+    fetch('https://jsonplaceholder.typicode.com/users').then(()=>{})
+}
+
+const opt = () => {
+     fetch('https://jsonplaceholder.typicode.com/todos')
+     fetch('https://jsonplaceholder.typicode.com/users')
+}
+
+
+// run this 3 functions one by one and observe waterfall section under network tab for each in 1 function you will see that first todos api call and after resolving that users api will call and in 2 because we are not chaining api call into eachother they both will call in same time and in 3 we also not chaining in callbacks thatswhy 3 will also call both apis in same time
+
+// that mins when we use async in any function all await call will be execute one after eachother that mins after resolving one other will call and in most off the time that is not what we want because this behabiour is necasary when other api call is depandend on first one so it's good so send all apis requests at a same time so we don't have to wait much 
+
+// this behaviour is already there in then when we not nest them so to achive the same we use compinator functions which we learn before in combinator.js
+
+// keep in mind when you call more then one apis in same async function then bydefault they will be call one after another if you don't want that you want to call them parallely then use combinator functions

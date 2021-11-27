@@ -16,3 +16,10 @@
 - so ex : we are exporting array from one.js and importing in two.js and initial value of array is 
 - [] and after some times it's become [1,2] then evert file that importing it also has new value [1,2]
 - if export value change then import value will also change in all places
+
+
+
+1) shoppingCart
+2) car
+3) student
+4) one
