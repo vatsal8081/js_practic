@@ -264,3 +264,9 @@ const opt = () => {
 // this behaviour is already there in then when we not nest them so to achive the same we use compinator functions which we learn before in combinator.js
 
 // keep in mind when you call more then one apis in same async function then bydefault they will be call one after another if you don't want that you want to call them parallely then use combinator functions
+
+const a = async() => {for(let i in [1,2]){console.log('i')}; await fetch('https://jsonplaceholder.typicode.com/todos/1'); for(let i in [1,2]){console.log('s')}}
+
+// run this code and you will see that the for loop which is before the await will call then other will will call only after the api resplve or reject so that mins when we use await in any async function all code which we right after it will be call after api resolve
+
+
